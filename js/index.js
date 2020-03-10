@@ -13,6 +13,10 @@ const logo = document.querySelector('.logo-heading');
 const destinHead = document.querySelectorAll('div.destination h4');
 const aLinks = document.querySelectorAll('a');
 const destinBTN = document.querySelectorAll('.btn');
+const headerSect = document.querySelectorAll('h2');
+const placeForHead = document.querySelectorAll('.intro, .text-content, .content-destination');
+
+let draggedHeader = null;
 
 document.querySelector('.main-navigation').addEventListener('dblclick', (e) => {
     document.querySelector('.main-navigation').style.backgroundColor = 'red';
@@ -46,6 +50,9 @@ Array.from(allImg).forEach(function(allImg){
     });
 });
 
+//Drag and Drop Event
+
+
 Array.from(para).forEach(function(para){
     para.addEventListener('mouseover', (e) => {
         para.style.backgroundColor = 'blue';
@@ -71,4 +78,5 @@ Array.from(destinBTN).forEach(function(destinBTN){
         destinBTN.style.color = 'red';
     });
 
-})
+});
+
