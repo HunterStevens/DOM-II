@@ -81,11 +81,15 @@ for(let i = 0; i < headerSect.length; i++){
         list.addEventListener('dragenter', (e) => {
             console.log('drag enter event');
             e.preventDefault();
-        })
+        });
 
          list.addEventListener('drop', (e) => {
              console.log('drop event');
-             list.prepend(draggedHeader);
+             event.preventDefault();
+             if(e.target.className === "listHead"){
+                draggedHeader.parentNode.removeChild(draggedHeader);
+                event.target.prepend(draggedHeader);
+            }
          });
      }
  }
@@ -116,4 +120,12 @@ Array.from(destinBTN).forEach(function(destinBTN){
     });
 
 });
+
+document.addEventListener('keydown', (e) =>{
+    console.log(`${event.code}`);
+         mainBod.style.backgroundImage = "url('img/photo-1544620347-c4fd4a3d5957.jpg')";
+         setTimeout(function(){
+            mainBod.style.backgroundImage = "none";
+         }, 3000)
+})
 
